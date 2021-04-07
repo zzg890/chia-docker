@@ -6,11 +6,17 @@ on:
       upstream_branch:
         description: 'chia branch name to use'
         required: true
-        default: 'dev'
+        default: 'v1.0.x'
       image_tag:
         description: 'special tag for this image build'
         required: true
         default: 'unstable'
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   docker_build_and_publish:
